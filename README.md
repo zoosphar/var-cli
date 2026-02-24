@@ -1,4 +1,4 @@
-# Codemap CLI
+# VAR CLI
 
 A static analysis engine that parses TypeScript/JavaScript codebases into queryable dependency graphs, powered by Tree-sitter AST parsing and LLM-driven code annotation.
 
