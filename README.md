@@ -77,7 +77,7 @@ Understanding large codebases is hard. Grep and IDE search find text matches, no
 ### Install
 
 ```bash
-git clone <repo-url>
+git clone https://github.com/zoosphar/var-cli
 cd codemap-cli
 bun install
 ```
