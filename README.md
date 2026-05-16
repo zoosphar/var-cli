@@ -4,6 +4,31 @@ A static analysis engine that parses TypeScript/JavaScript codebases into querya
 
 Codemap scans your source code, extracts every symbol and its relationships, stores the full dependency graph in PostgreSQL, and optionally annotates it with AI-generated metadata — turning any codebase into a structured, searchable knowledge base.
 
+## Why I Built This
+
+Cursor and Claude Code are powerful but they're expensive with context.
+
+They grep through files, store memory in plain markdown, and burn 
+tokens trying to understand codebases that are fundamentally 
+relational — functions calling functions, modules depending on modules, 
+types referencing types.
+
+A markdown file is a terrible brain for a relational problem.
+
+So I built var-cli as a local brain for AI coding tools. It parses 
+your entire TypeScript/JavaScript codebase into a PostgreSQL dependency 
+graph — every symbol, every relationship, every import chain — and 
+syncs instantly as code changes.
+
+When your AI needs to find the hot path through a system, instead of 
+grepping 50 files and hallucinating connections, it queries a structured 
+graph with deterministic relationships. LLM-powered annotations nudge 
+the directionality further — each symbol gets a purpose summary and 
+category tag so the AI knows not just what exists, but what it does.
+
+The result: faster, cheaper, more accurate codebase navigation for 
+AI coding tools.
+
 ## Why Codemap?
 
 Understanding large codebases is hard. Grep and IDE search find text matches, not meaning. Codemap solves this by building a **complete graph of your code's structure** — every class, function, type, and the relationships between them — then layering on AI-powered annotations that describe *what* each piece does and *why* it exists.
